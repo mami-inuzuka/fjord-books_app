@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1><%= Book.model_name.human %></h1>
+<h1><%= Book.model_name.human %></h1><%= @num %>
 
 <table>
   <thead>
@@ -31,3 +31,4 @@
 <br>
 
 <%= link_to t('views.common.new'), new_book_path %>
+<%= paginate @books %>
