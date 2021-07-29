@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'mypage/show'
+  get 'mypage' => 'mypage#show'
   root to: 'books#index'
   devise_for :users, controllers: {
     registrations: 'users/registrations'
