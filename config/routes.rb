@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'mypage/show'
   root to: 'books#index'
   devise_for :users
   resources :books
