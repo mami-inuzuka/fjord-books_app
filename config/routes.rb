@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
   get 'mypage/show'
   root to: 'books#index'
-  devise_for :users
+  devise_for :users, controllers: {
+    registrations: 'users/registrations'
+  }
+
+  devise_scope :user do
+    get 'users' => 'users/registrations#index'
+  end
   resources :books
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
