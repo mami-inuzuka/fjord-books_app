@@ -1,4 +1,4 @@
 <h1>User Lists</h1>
 <% @users.each do |user| %>
-  <p><%= user.email %></p>
+  <p><%= user.email %><%= link_to('Show', "/users/#{user.id}", method: :get) %></p>
 <% end %>

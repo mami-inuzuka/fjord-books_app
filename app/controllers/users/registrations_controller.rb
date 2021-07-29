@@ -5,6 +5,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def index
     @users = User.all.order(:id)
   end
+
+  # GET /users/:id
+  def show
+    @user = User.find(params[:id])
+  end
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
