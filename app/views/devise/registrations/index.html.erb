@@ -2,3 +2,5 @@
 <% @users.each do |user| %>
   <p><%= user.email %><%= link_to t('views.common.show') , "/users/#{user.id}", method: :get %></p>
 <% end %>
+
+<%= paginate @users %>

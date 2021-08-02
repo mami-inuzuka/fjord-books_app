@@ -6,7 +6,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # GET /users
   def index
-    @users = User.all.order(:id)
+    @users = User.page(params[:page]).per(10)
   end
 
   # GET /users/:id
