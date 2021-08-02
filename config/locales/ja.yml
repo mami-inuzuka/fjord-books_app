@@ -226,3 +226,21 @@ ja:
       notice_create: "%{name}が作成されました。"
       notice_update: "%{name}が更新されました。"
       notice_destroy: "%{name}が削除されました。"
+  navigation:
+    logout: 'ログアウト'
+    userlist: 'ユーザー一覧'
+    mypage: 'マイページ'
+  account:
+    profile:
+      name: '名前'
+      email: 'メールアドレス'
+      zipcode: '郵便番号'
+      address: '住所'
+      bio: '自己紹介'
+      password: 'パスワード'
+    action:
+      delete: 'アカウント削除'
+    message:
+      password_change_note: "変更したくない場合は空欄にしてください"
+      password_minimum_length: "文字以上で入力してください"
+      password_for_confirm: "変更を確定するために現在のパスワードを入力してください"

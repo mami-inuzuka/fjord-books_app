@@ -14,9 +14,9 @@
   </thead>
 
   <% if user_signed_in? %>
-    <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
-    <%= link_to('UserList', users_path, method: :get) %>
-    <%= link_to('Mypage', mypage_path, method: :get) %>
+    <%= link_to(t('navigation.logout'), destroy_user_session_path, method: :delete) %>
+    <%= link_to(t('navigation.userlist'), users_path, method: :get) %>
+    <%= link_to(t('navigation.mypage'), mypage_path, method: :get) %>
   <% end %>
 
   <tbody>

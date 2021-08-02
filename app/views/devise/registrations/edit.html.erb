@@ -1,15 +1,15 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<h2><%= t('views.common.edit') %></h2>
 
 <%= form_with model: @user, id: 'edit_user', class: 'edit_user', url: users_path, ethod: :put,local: true do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
    <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :name, t('account.profile.name') %><br />
     <%= f.text_field :name %>
   </div>
 
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :email, t('account.profile.email') %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
@@ -18,26 +18,26 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :zipcode %><br />
+    <%= f.label :zipcode, t('account.profile.zipcode') %><br />
     <%= f.text_field :zipcode %>
   </div>
 
   <div class="field">
-    <%= f.label :address %><br />
+    <%= f.label :address, t('account.profile.address') %><br />
     <%= f.text_field :address %>
   </div>
 
   <div class="field">
-    <%= f.label :bio %><br />
+    <%= f.label :bio, t('account.profile.bio') %><br />
     <%= f.text_area :bio %>
   </div>
 
   <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.label :password %> <i><%= (t('account.message.password_change_note')) %></i><br />
     <%= f.password_field :password, autocomplete: "new-password" %>
     <% if @minimum_password_length %>
       <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
+      <em><%= @minimum_password_length %><%= t('account.message.password_minimum_length') %></em>
     <% end %>
   </div>
 
@@ -47,17 +47,17 @@
   </div>
 
   <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+    <%= f.label :current_password %> <i><%= (t('account.message.password_for_confirm')) %></i><br />
     <%= f.password_field :current_password, autocomplete: "current-password" %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Update" %>
+    <%= f.submit t('helpers.submit.update') %>
   </div>
 <% end %>
 
-<h3>Cancel my account</h3>
+<h3><%= t('account.action.delete') %></h3>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+<p><%= button_to t('account.action.delete'), registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
-<%= link_to "Back", :back %>
+<%= link_to t('views.common.back'), :back %>

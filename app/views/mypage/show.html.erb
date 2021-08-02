@@ -1,28 +1,28 @@
-<h1>Mypage</h1>
+<h1><%= t('navigation.mypage') %></h1>
 
 <p>
-  <strong>name:</strong>
+  <strong><%= t('account.profile.name') %></strong>
   <%= current_user.name %>
 </p>
 
 <p>
-  <strong>email:</strong>
+  <strong><%= t('account.profile.email') %></strong>
   <%= current_user.email %>
 </p>
 
 <p>
-  <strong>zipcode:</strong>
+  <strong><%= t('account.profile.zipcode') %></strong>
   <%= current_user.zipcode %>
 </p>
 
 <p>
-  <strong>adress:</strong>
+  <strong><%= t('account.profile.address') %></strong>
   <%= current_user.address %>
 </p>
 
 <p>
-  <strong>bio:</strong>
+  <strong><%= t('account.profile.bio') %></strong>
   <%= current_user.bio %>
 </p>
 
-<%= link_to('Edit', mypage_edit_path, method: :get) %>
+<%= link_to t('views.common.edit'), mypage_edit_path, method: :get %>
