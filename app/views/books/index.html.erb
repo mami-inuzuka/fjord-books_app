@@ -13,11 +13,13 @@
     </tr>
   </thead>
 
-  <% if user_signed_in? %>
-    <%= link_to(t('navigation.logout'), destroy_user_session_path, method: :delete) %>
-    <%= link_to(t('navigation.userlist'), users_path, method: :get) %>
-    <%= link_to(t('navigation.mypage'), mypage_path, method: :get) %>
-  <% end %>
+  <nav>
+    <ul>
+      <li><%= link_to(t('navigation.logout'), destroy_user_session_path, method: :delete) %></li>
+      <li><%= link_to(t('navigation.userlist'), users_path, method: :get) %></li>
+      <li><%= link_to(t('navigation.mypage'), mypage_path, method: :get) %></li>
+    </ul>
+  </nav>
 
   <tbody>
     <% @books.each do |book| %>
