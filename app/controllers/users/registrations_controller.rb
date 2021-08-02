@@ -2,7 +2,7 @@
 
 class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :authenticate_user! がDeviseのコントローラを継承していると使えないため下記を記述
-  prepend_before_action :authenticate_scope!, except: :new
+  prepend_before_action :authenticate_scope!, except: [:new, :create]
 
   # GET /users
   def index
