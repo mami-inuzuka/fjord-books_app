@@ -39,12 +39,12 @@ group :development do
   gem 'faker'
   gem 'i18n_generators'
   gem 'listen', '~> 3.3'
+  gem 'letter_opener'
   gem 'rack-mini-profiler', '~> 2.0'
   gem 'rubocop-fjord', require: false
   gem 'rubocop-rails', require: false
   gem 'spring'
   gem 'web-console', '>= 4.1.0'
-  gem 'letter_opener'
 end
 
 group :test do
@@ -59,6 +59,6 @@ end
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 gem 'carrierwave'
-gem 'kaminari'
 gem 'devise'
 gem 'devise-i18n'
+gem 'kaminari'
