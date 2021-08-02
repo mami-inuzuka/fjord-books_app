@@ -233,6 +233,8 @@ ja:
     sign_up: '新規登録'
     sign_in: 'ログイン'
     forgot_password: 'パスワードを忘れたかたはこちら'
+    back_to_books: '書籍一覧に戻る'
+    back_to_users: 'ユーザー一覧に戻る'
   account:
     profile:
       name: '名前'
