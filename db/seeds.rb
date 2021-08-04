@@ -53,5 +53,4 @@ end
   )
 end
 
-
 puts '初期データの投入が完了しました。' # rubocop:disable Rails/Output
