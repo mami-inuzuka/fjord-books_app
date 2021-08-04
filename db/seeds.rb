@@ -47,7 +47,7 @@ end
     email: "sample-#{i}@xxx.com",
     password: 'password',
     name: "山田太郎_#{i}",
-    zipcode: "000-0000",
+    zipcode: '000-0000',
     address: "山田太郎_#{i}の住所",
     bio: "山田太郎_#{i}の自己紹介"
   )
