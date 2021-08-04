@@ -13,10 +13,6 @@
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
-
   <div class="field">
     <%= f.label :zipcode, t('account.profile.zipcode') %><br />
     <%= f.text_field :zipcode %>
