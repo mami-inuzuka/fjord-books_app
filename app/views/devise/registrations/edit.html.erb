@@ -54,6 +54,6 @@
 
 <h3><%= t('account.action.delete') %></h3>
 
-<p><%= button_to t('account.action.delete'), registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+<p><%= button_to t('account.action.delete'), registration_path(resource_name), data: { confirm: t('views.common.delete_confirm') }, method: :delete %></p>
 
 <%= link_to t('views.common.back'), :back %>
