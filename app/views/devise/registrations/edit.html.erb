@@ -1,39 +1,23 @@
-<h2><%= t('views.common.edit') %></h2>
+<h2><%= t('.title', resource: resource.model_name.human) %></h2>
 
-<%= form_with(model: @user, id: 'edit_user', class: 'edit_user', url: users_path, method: :put, local: true) do |f| %>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
-   <div class="field">
-    <%= f.label :name, t('account.profile.name') %><br />
-    <%= f.text_field :name %>
-  </div>
-
   <div class="field">
-    <%= f.label :email, t('account.profile.email') %><br />
+    <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
-  <div class="field">
-    <%= f.label :zipcode, t('account.profile.zipcode') %><br />
-    <%= f.text_field :zipcode %>
-  </div>
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div><%= t('.currently_waiting_confirmation_for_email', email: resource.unconfirmed_email) %></div>
+  <% end %>
 
   <div class="field">
-    <%= f.label :address, t('account.profile.address') %><br />
-    <%= f.text_field :address %>
-  </div>
-
-  <div class="field">
-    <%= f.label :bio, t('account.profile.bio') %><br />
-    <%= f.text_area :bio %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %> <i><%= (t('account.message.password_change_note')) %></i><br />
+    <%= f.label :password %> <i>(<%= t('.leave_blank_if_you_don_t_want_to_change_it') %>)</i><br />
     <%= f.password_field :password, autocomplete: "new-password" %>
     <% if @minimum_password_length %>
       <br />
-      <em><%= @minimum_password_length %><%= t('account.message.password_minimum_length') %></em>
+      <em><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></em>
     <% end %>
   </div>
 
@@ -43,17 +27,17 @@
   </div>
 
   <div class="field">
-    <%= f.label :current_password %> <i><%= (t('account.message.password_for_confirm')) %></i><br />
+    <%= f.label :current_password %> <i>(<%= t('.we_need_your_current_password_to_confirm_your_changes') %>)</i><br />
     <%= f.password_field :current_password, autocomplete: "current-password" %>
   </div>
 
   <div class="actions">
-    <%= f.submit t('helpers.submit.update') %>
+    <%= f.submit t('.update') %>
   </div>
 <% end %>
 
-<h3><%= t('account.action.delete') %></h3>
+<h3><%= t('.cancel_my_account') %></h3>
 
-<p><%= button_to t('account.action.delete'), registration_path(resource_name), data: { confirm: t('views.common.delete_confirm') }, method: :delete %></p>
+<p><%= t('.unhappy') %> <%= button_to t('.cancel_my_account'), registration_path(resource_name), data: { confirm: t('.are_you_sure') }, method: :delete %></p>
 
-<%= link_to t('views.common.back'), :back %>
+<%= link_to t('devise.shared.links.back'), :back %>
