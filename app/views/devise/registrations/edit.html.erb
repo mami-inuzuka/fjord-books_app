@@ -1,6 +1,6 @@
 <h2><%= t('views.common.edit') %></h2>
 
-<%= form_with model: @user, id: 'edit_user', class: 'edit_user', url: users_path, ethod: :put,local: true do |f| %>
+<%= form_with(model: @user, id: 'edit_user', class: 'edit_user', url: users_path, method: :put, local: true) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
    <div class="field">
