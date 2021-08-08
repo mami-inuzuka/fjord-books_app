@@ -1,0 +1,6 @@
+<h1>フォロワー一覧</h1>
+<ul>
+<% @user.followers.each do |user| %>
+  <li><%= link_to user.name, user_path(user.id) %></li>
+<% end %>
+</ul>
