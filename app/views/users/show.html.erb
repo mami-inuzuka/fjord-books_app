@@ -2,8 +2,12 @@
 <p>フォロー：<%= @user.followings.count %></p>
 <p>フォロワー：<%= @user.followers.count %></p>
 
-<%= link_to "フォローする", user_relationships_path(@user.id), method: :post %>
-<%= link_to "フォロー解除", user_relationships_path(@user.id), method: :delete %>
+<% if current_user.active_relationships.exists?(follower_id: @user.id) %>
+  <%= link_to "フォロー解除", user_relationships_path(@user.id), method: :delete %>
+<% else %>
+  <%= link_to "フォローする", user_relationships_path(@user.id), method: :post %>
+<% end %>
+
 <p>
   <strong><%= User.human_attribute_name(:email) %>:</strong>
   <%= @user.email %>
