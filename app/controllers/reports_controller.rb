@@ -12,7 +12,7 @@ class ReportsController < ApplicationController
 
   # GET /reports/new
   def new
-    @report = Report.new
+    @report = current_user.reports.new
   end
 
   # GET /reports/1/edit
@@ -21,7 +21,7 @@ class ReportsController < ApplicationController
 
   # POST /reports or /reports.json
   def create
-    @report = Report.new(report_params)
+    @report = current_user.reports.new(report_params)
 
     respond_to do |format|
       if @report.save
