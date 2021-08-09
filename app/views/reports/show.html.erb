@@ -9,13 +9,11 @@
   <%= @report.description %>
 </p>
 
-<% if current_user == @report.user %>
-  <%= link_to 'Edit', edit_report_path(@report) %> |
-  <%= link_to 'Destroy', report_path(@report), method: :delete, data: { confirm: 'Are you sure?' } %> |
-<% end %>
-<%= link_to 'Back', reports_path %>
-
+<h2>コメント</h2>
 <div class="comment_area">
+<% if @comments.empty? %>
+  <p>コメントはまだありません</p>
+<% else %>
   <% @comments.each do |comment| %>
     <div class="comment_description">
       <%= comment.comment %>
@@ -29,4 +27,11 @@
       <% end %>
     </div>
   <% end %>
+<% end %>
 </div>
+
+<% if current_user == @report.user %>
+  <%= link_to 'Edit', edit_report_path(@report) %> |
+  <%= link_to 'Destroy', report_path(@report), method: :delete, data: { confirm: 'Are you sure?' } %> |
+<% end %>
+<%= link_to 'Back', reports_path %>
