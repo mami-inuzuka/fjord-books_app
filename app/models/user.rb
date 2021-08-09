@@ -11,7 +11,7 @@ class User < ApplicationRecord
   has_many :followers, through: :passive_relationships, source: :follower
 
   has_many :reports
-  has_many :comments, as: :commentable
+  has_many :comments
 
   has_one_attached :avatar
 
