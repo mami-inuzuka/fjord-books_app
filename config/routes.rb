@@ -11,4 +11,10 @@ Rails.application.routes.draw do
       resources :followers, only: [:index]
     end
   end
+  resources :books do
+    resources :comments, only: %i[create destroy], module: :books
+  end
+  resources :reports do
+    resources :comments, only: %i[create destroy], module: :reports
+  end
 end
