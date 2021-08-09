@@ -20,5 +20,26 @@
   <%= image_tag(@book.picture_url) if @book.picture.present? %>
 </p>
 
+<h2>コメント</h2>
+<div class="comment_area">
+<% if @comments.empty? %>
+  <p>コメントはまだありません</p>
+<% else %>
+  <% @comments.each do |comment| %>
+    <div class="comment_description">
+      <%= comment.comment %>
+    </div>
+    <span class="comment_created-at"><%= l comment.created_at, format: :long %></span>
+    <div class="user_name">
+      <% if comment.user.name.nil? %>
+        <%= comment.user.email %>
+      <% else %>
+        <%= comment.user.name %>
+      <% end %>
+    </div>
+  <% end %>
+<% end %>
+</div>
+
 <%= link_to t('views.common.edit'), edit_book_path(@book) %> |
 <%= link_to t('views.common.back'), books_path %>
