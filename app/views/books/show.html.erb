@@ -38,6 +38,8 @@
       <% end %>
     </div>
     <%= link_to '削除', book_comment_path(@book.id,comment), method: :delete, data: { confirm: t('views.common.delete_confirm') }%>
+    <%= link_to '編集', edit_book_comment_path(@book.id,comment) %>
+
   <% end %>
 <% end %>
 </div>

@@ -1,5 +1,5 @@
 class Books::CommentsController < CommentsController
-  before_action :set_commentable, only: %i[create new destroy]
+  before_action :set_commentable, only: %i[create new destroy edit update]
   private
     def set_commentable
       @commentable = Book.find(params[:book_id])
