@@ -8,6 +8,9 @@ class CommentsController < ApplicationController
   end
 
   def destroy
+    @comment = @commentable.comments.find(params[:id])
+    @comment.destroy
+    redirect_to @commentable, notice: "コメントが削除されました。"
   end
 
   private

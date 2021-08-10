@@ -26,6 +26,7 @@
         <%= comment.user.name %>
       <% end %>
     </div>
+    <%= link_to '削除', report_comment_path(@report.id,comment), method: :delete, data: { confirm: t('views.common.delete_confirm') }%>
   <% end %>
 <% end %>
 </div>
