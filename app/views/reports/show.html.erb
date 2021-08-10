@@ -31,7 +31,7 @@
 <% end %>
 </div>
 
-<%= render 'comments/form', commentable: @report %>
+<%= render 'comments/form', commentable: @report , comment: Comment.new %>
 
 <% if current_user == @report.user %>
   <%= link_to 'Edit', edit_report_path(@report) %> |
