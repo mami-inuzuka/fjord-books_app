@@ -1,10 +1,10 @@
 <h1><%= t('.title', resource: resource.model_name.human) %></h1>
 
-<%= form_with(model: resource, id: 'edit_user', class: 'edit_user', url: user_registration_path, ethod: :put,local: true) do |f| %>
+<%= form_with(model: resource, id: 'edit_user', class: 'edit_user', url: user_registration_path, method: :put,local: true) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
-    <%= f.label :name, t('account.profile.name') %><br />
+    <%= f.label :name %><br />
     <%= f.text_field :name %>
   </div>
 
@@ -14,17 +14,17 @@
   </div>
 
   <div class="field">
-    <%= f.label :zipcode, t('account.profile.zipcode') %><br />
+    <%= f.label :zipcode %><br />
     <%= f.text_field :zipcode %>
   </div>
 
   <div class="field">
-    <%= f.label :address, t('account.profile.address') %><br />
+    <%= f.label :address %><br />
     <%= f.text_field :address %>
   </div>
 
   <div class="field">
-    <%= f.label :bio, t('account.profile.bio') %><br />
+    <%= f.label :bio %><br />
     <%= f.text_area :bio %>
   </div>
 

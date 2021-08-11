@@ -1,26 +1,26 @@
 <h1><%= t('views.common.show') %></h1>
 <p>
-  <strong><%= t('account.profile.name') %></strong>
+  <strong><%= User.human_attribute_name(:name) %></strong>
   <%= @user.name %>
 </p>
 
 <p>
-  <strong><%= t('account.profile.email') %></strong>
+  <strong><%= User.human_attribute_name(:email) %></strong>
   <%= @user.email %>
 </p>
 
 <p>
-  <strong><%= t('account.profile.zipcode') %></strong>
+  <strong><%= User.human_attribute_name(:zipcode) %></strong>
   <%= @user.zipcode %>
 </p>
 
 <p>
-  <strong><%= t('account.profile.address') %></strong>
+  <strong><%= User.human_attribute_name(:address) %></strong>
   <%= @user.address %>
 </p>
 
 <p>
-  <strong><%= t('account.profile.bio') %></strong>
+  <strong><%= User.human_attribute_name(:bio) %></strong>
   <%= @user.bio %>
 </p>
 
