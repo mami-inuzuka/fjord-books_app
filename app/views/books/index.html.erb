@@ -17,7 +17,7 @@
     <ul>
       <li><%= link_to(t('navigation.logout'), destroy_user_session_path, method: :delete) %></li>
       <li><%= link_to(t('navigation.userlist'), users_path, method: :get) %></li>
-      <li><%= link_to(t('navigation.edit_user'), edit_user_path(current_user), method: :get) %></li>
+      <li><%= link_to(t('navigation.edit_user'), edit_user_registration_path, method: :get) %></li>
     </ul>
   </nav>
 
