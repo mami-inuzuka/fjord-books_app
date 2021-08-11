@@ -228,20 +228,3 @@ en:
       notice_create: "%{name} was successfully created."
       notice_update: "%{name} was successfully updated."
       notice_destroy: "%{name} was successfully destroyed."
-  navigation:
-    logout: 'Logout'
-    userlist: 'UserList'
-    mypage: 'Mypage'
-  account:
-    profile:
-      name: 'Name'
-      email: 'Email'
-      zipcode: 'Zipcode'
-      address: 'Address'
-      bio: 'Bio'
-    action:
-      delete: 'Cancel my account'
-    message:
-      password_change_note: "leave blank if you don't want to change it."
-      password_minimum_length: "characters minimum"
-      password_for_confirm: "we need your current password to confirm your changes"
