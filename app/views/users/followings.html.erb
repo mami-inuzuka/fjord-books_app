@@ -1,6 +1,10 @@
 <h1>フォロー一覧</h1>
 <ul>
-<% @user.followings.each do |user| %>
-  <li><%= link_to user.name, user_path(user.id) %></li>
+<% if @user.followings.exists? %>
+  <% @user.followings.each do |user| %>
+    <li><%= link_to user.name, user_path(user.id) %></li>
+  <% end %>
+<% else %>
+  <p>フォローしているユーザーはいません</p>
 <% end %>
 </ul>
