@@ -4,9 +4,9 @@
 
 <% if @user != current_user %>
   <% if current_user.active_relationships.exists?(follower_id: @user.id) %>
-    <%= link_to "フォロー解除", user_relationships_path(@user.id), method: :delete %>
+    <%= link_to 'フォロー解除', user_relationships_path(@user.id), method: :delete %>
   <% else %>
-    <%= link_to "フォローする", user_relationships_path(@user.id), method: :post %>
+    <%= link_to 'フォローする', user_relationships_path(@user.id), method: :post %>
   <% end %>
 <% end %>
 
