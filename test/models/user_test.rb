@@ -4,42 +4,42 @@ require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
   test '#following?' do
-    me = User.create!(email: 'me@example.com', password: 'password')
-    she = User.create!(email: 'she@example.com', password: 'password')
-    assert_not me.following?(she)
-    me.follow(she)
-    assert me.following?(she)
+    me = users(:me)
+    alice = users(:alice)
+    assert_not me.following?(alice)
+    me.follow(alice)
+    assert me.following?(alice)
   end
 
   test '#followed_by?' do
-    me = User.create!(email: 'me@example.com', password: 'password')
-    she = User.create!(email: 'she@example.com', password: 'password')
-    assert_not me.followed_by?(she)
-    she.follow(me)
-    assert me.followed_by?(she)
+    me = users(:me)
+    alice = users(:alice)
+    assert_not me.followed_by?(alice)
+    alice.follow(me)
+    assert me.followed_by?(alice)
   end
 
   test '#follow' do
-    me = User.create!(email: 'me@example.com', password: 'password')
-    she = User.create!(email: 'she@example.com', password: 'password')
+    me = users(:me)
+    alice = users(:alice)
 
-    assert_not me.following?(she)
-    me.follow(she)
-    assert me.following?(she)
+    assert_not me.following?(alice)
+    me.follow(alice)
+    assert me.following?(alice)
   end
 
   test '#unfollow' do
-    me = User.create!(email: 'me@example.com', password: 'password')
-    she = User.create!(email: 'she@example.com', password: 'password')
-    me.follow(she)
-    assert me.following?(she)
-    me.unfollow(she)
-    assert_not me.following?(she)
+    me = users(:me)
+    alice = users(:alice)
+    me.follow(alice)
+    assert me.following?(alice)
+    me.unfollow(alice)
+    assert_not me.following?(alice)
   end
 
   test '#name_or_email' do
-    user = User.new(email: 'hoge@example.com', name: '')
-    assert_equal 'hoge@example.com', user.name_or_email
+    user = users(:alice)
+    assert_equal 'alice@example.com', user.name_or_email
     user.name = 'Alice'
     assert_equal 'Alice', user.name_or_email
   end

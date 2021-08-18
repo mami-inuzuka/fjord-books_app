@@ -7,7 +7,7 @@ class BooksTest < ApplicationSystemTestCase
     @book = books(:one)
     @user = users(:alice)
     visit root_url
-    fill_in 'Eメール', with: 'alice@example.com'
+    fill_in 'Eメール', with: @user.email
     fill_in 'パスワード', with: 'password'
     click_button 'ログイン'
   end
