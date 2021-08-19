@@ -15,4 +15,8 @@ class User < ApplicationRecord
   def name_or_email
     name.blank? ? email : name
   end
+
+  def following?(user)
+    active_relationships.exists?(follower_id: user.id)
+  end
 end
