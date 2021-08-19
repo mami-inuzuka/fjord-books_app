@@ -1,7 +1,7 @@
 <h1>フォロワー一覧</h1>
 <ul>
-<% if @user.followers.exists? %>
-  <% @user.followers.each do |user| %>
+<% if users = @user.followers.presence %>
+  <% users.each do |user| %>
     <li><%= link_to user.name_or_email, user_path(user.id) %></li>
   <% end %>
 <% else %>

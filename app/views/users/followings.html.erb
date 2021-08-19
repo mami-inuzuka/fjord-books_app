@@ -1,7 +1,7 @@
 <h1>フォロー一覧</h1>
 <ul>
-<% if @user.followings.exists? %>
-  <% @user.followings.each do |user| %>
+<% if users = @user.followings.presence %>
+  <% users.each do |user| %>
     <li><%= link_to user.name_or_email, user_path(user.id) %></li>
   <% end %>
 <% else %>
