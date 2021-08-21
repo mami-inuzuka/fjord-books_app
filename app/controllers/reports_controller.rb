@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class ReportsController < ApplicationController
-  before_action :set_report, only: %i[ show edit update destroy ]
+  before_action :set_report, only: %i[show edit update destroy]
 
   def index
     @reports = Report.all
@@ -15,8 +15,7 @@ class ReportsController < ApplicationController
     @report = current_user.reports.new
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
     @report = current_user.reports.new(report_params)
@@ -41,11 +40,12 @@ class ReportsController < ApplicationController
   end
 
   private
-    def set_report
-      @report = Report.find(params[:id])
-    end
 
-    def report_params
-      params.require(:report).permit(:title, :description)
-    end
+  def set_report
+    @report = Report.find(params[:id])
+  end
+
+  def report_params
+    params.require(:report).permit(:title, :description)
+  end
 end
