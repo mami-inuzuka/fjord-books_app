@@ -19,13 +19,13 @@
       <%= comment.comment %>
     </div>
     <span class="comment_created-at"><%= l comment.created_at, format: :long %></span>
-    <div class="user_name">
+    <span class="user_name">
       <% if comment.user.name.nil? %>
         <%= comment.user.email %>
       <% else %>
         <%= comment.user.name %>
       <% end %>
-    </div>
+    </span>
     <%= link_to t('views.common.destroy'), report_comment_path(@report.id,comment), method: :delete, data: { confirm: t('views.common.delete_confirm') }%>
     <%= link_to t('views.common.edit'), edit_report_comment_path(@report.id,comment) %>
   <% end %>
