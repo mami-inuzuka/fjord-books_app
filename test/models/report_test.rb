@@ -13,8 +13,7 @@ class ReportTest < ActiveSupport::TestCase
   test '#created_on' do
     me = users(:me)
     report = me.reports.build(title: 'example', content: 'example')
-    report.created_at = '2021-08-18 00:00:00'
     report.save
-    assert_equal '2021/08/18', I18n.l(report.created_on)
+    assert_equal I18n.l(report.created_at.to_date), I18n.l(report.created_on)
   end
 end
