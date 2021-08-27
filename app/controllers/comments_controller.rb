@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class CommentsController < ApplicationController
+  before_action :set_commentable, only: %i[create destroy edit update]
   before_action :set_comment, only: %i[edit update destroy]
 
   def create
@@ -27,8 +28,9 @@ class CommentsController < ApplicationController
 
   private
 
-  def set_comment
-    @comment = @commentable.comments.find(params[:id])
+  def set_commentable
+    commentable_name = commentable_type.name.underscore
+    @commentable = commentable_type.find(params["#{commentable_name}_id"])
   end
 
   def comment_params
