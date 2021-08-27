@@ -12,8 +12,10 @@ class ReportTest < ActiveSupport::TestCase
 
   test '#created_on' do
     me = users(:me)
-    report = me.reports.build(title: 'example', content: 'example')
-    report.save
-    assert_equal Date.today, report.created_on
+    travel_to Time.zone.local(2021, 8, 20) do
+      report = me.reports.build(title: 'example', content: 'example')
+      report.save
+      assert_equal Date.today, report.created_on
+    end
   end
 end
