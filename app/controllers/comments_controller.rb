@@ -33,6 +33,10 @@ class CommentsController < ApplicationController
     @commentable = commentable_type.find(params["#{commentable_name}_id"])
   end
 
+  def set_comment
+    @comment = @commentable.comments.find(params[:id])
+  end
+
   def comment_params
     params.require(:comment).permit(:comment)
   end
