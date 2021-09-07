@@ -1,0 +1,19 @@
+<div class="comment_area">
+<% if @comments.empty? %>
+  <p>コメントはまだありません</p>
+<% else %>
+  <% @comments.each do |comment| %>
+    <div class="comment_description">
+      <%= comment.comment %>
+    </div>
+    <span class="comment_created-at"><%= l comment.created_at, format: :long %></span>
+    <span class="user_name">
+      <%= comment.user.name_or_email %>
+    </span>
+    <% if current_user == comment.user %>
+      <%= link_to t('views.common.destroy'), polymorphic_path([model, comment]), method: :delete, data: { confirm: t('views.common.delete_confirm') }%>
+      <%= link_to t('views.common.edit'), edit_polymorphic_path([model, comment]) %>
+    <% end %>
+  <% end %>
+<% end %>
+</div>
