@@ -22,8 +22,8 @@
     <span class="user_name">
       <%= comment.user.name_or_email %>
     </span>
-    <%= link_to t('views.common.destroy'), report_comment_path(@report.id,comment), method: :delete, data: { confirm: t('views.common.delete_confirm') }%>
-    <%= link_to t('views.common.edit'), edit_report_comment_path(@report.id,comment) %>
+    <%= link_to t('views.common.destroy'), polymorphic_path([@report, comment]), method: :delete, data: { confirm: t('views.common.delete_confirm') }%>
+    <%= link_to t('views.common.edit'), edit_polymorphic_path([@report, comment]) %>
   <% end %>
 <% end %>
 </div>
