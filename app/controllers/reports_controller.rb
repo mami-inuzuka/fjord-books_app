@@ -4,11 +4,11 @@ class ReportsController < ApplicationController
   before_action :set_report, only: %i[show edit update destroy]
 
   def index
-    @reports = Report.all
+    @reports = Report.all.order(:id)
   end
 
   def show
-    @comments = Report.find(params[:id]).comments
+    @comments = Report.find(params[:id]).comments.order(:id)
   end
 
   def new
