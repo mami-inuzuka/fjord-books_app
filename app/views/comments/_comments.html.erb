@@ -11,8 +11,8 @@
       <%= comment.user.name_or_email %>
     </span>
     <% if current_user == comment.user %>
-      <%= link_to t('views.common.destroy'), polymorphic_path([model, comment]), method: :delete, data: { confirm: t('views.common.delete_confirm') }%>
-      <%= link_to t('views.common.edit'), edit_polymorphic_path([model, comment]) %>
+      <%= link_to t('views.common.destroy'), [model, comment], method: :delete, data: { confirm: t('views.common.delete_confirm') }%>
+      <%= link_to t('views.common.edit'), [:edit, model, comment] %>
     <% end %>
   <% end %>
 <% end %>
