@@ -1,8 +1,8 @@
 <div class="comment_area">
-<% if @comments.empty? %>
+<% if comments.empty? %>
   <p>コメントはまだありません</p>
 <% else %>
-  <% @comments.each do |comment| %>
+  <% comments.each do |comment| %>
     <div class="comment_description">
       <%= comment.comment %>
     </div>
