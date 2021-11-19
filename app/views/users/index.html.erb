@@ -1,0 +1,8 @@
+<h1><%= t('navigation.userlist') %></h1>
+<% @users.each do |user| %>
+  <p><%= user.email %><%= link_to t('views.common.show') , "/users/#{user.id}", method: :get %></p>
+<% end %>
+
+<%= paginate @users %>
+
+<%= link_to t('navigation.back_to_books'), books_path, method: :get %>
