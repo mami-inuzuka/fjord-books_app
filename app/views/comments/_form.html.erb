@@ -1,0 +1,10 @@
+<%= form_with model: [commentable, comment] do |form| %>
+  <div class="field">
+    <%= form.label :comment %>
+    <%= form.text_area :comment, required: :required %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
