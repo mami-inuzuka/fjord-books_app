@@ -29,15 +29,14 @@
 # To learn more, please read the Rails Internationalization guide
 # available at https://guides.rubyonrails.org/i18n.html.
 
-en:
-  title: "Title"
-  memo: "Memo"
-  author: "Author"
-  picture: "Picture"
-  show: "Show"
-  edit: "Edit"
-  destroy: "Destroy"
-  new_book: "New"
-  back: "Back"
-  book_lists: "Books"
-
+ja:
+  title: "タイトル"
+  memo: "メモ"
+  author: "著者"
+  picture: "画像"
+  show: "詳細"
+  edit: "編集"
+  destroy: "削除"
+  new_book: "新規追加"
+  back: "戻る"
+  book_lists: "書籍一覧"
